@@ -29,7 +29,7 @@ export default class Login extends Component {
 					<FormGroup bsSize="large" controlId="email">
 						<ControlLabel>Email</ControlLabel>
 						<FormControl
-							autofocus
+							autoFocus
 							onChange={this.handleChange}
 							type="email"
 							value={this.state.email}
