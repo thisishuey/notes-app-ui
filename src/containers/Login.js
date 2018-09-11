@@ -13,7 +13,8 @@ export default class Login extends Component {
 	};
 
 	validateForm () {
-		return this.state.email.length > 0 && this.state.password.length > 0;
+		const { email, password } = this.state;
+		return email.length > 0 && password.length > 0;
 	}
 
 	handleChange = (event) => {
@@ -63,10 +64,10 @@ export default class Login extends Component {
 						block
 						bsSize="large"
 						disabled={!this.validateForm()}
-						type="submit"
 						isLoading={isLoading}
-						text="Login"
 						loadingText="Logging in..."
+						text="Login"
+						type="submit"
 					/>
 				</form>
 			</div>
