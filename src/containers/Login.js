@@ -30,7 +30,6 @@ export default class Login extends Component {
 		try {
 			await Auth.signIn(email, password);
 			userHasAuthenticated(true);
-			history.push('/');
 		} catch (exception) {
 			alert(exception.message);
 			this.setState({ isLoading: false });

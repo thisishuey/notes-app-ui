@@ -75,8 +75,8 @@ export default class NewNote extends Component {
 					</FormGroup>
 					<LoaderButton
 						block
-						bsStyle="primary"
 						bsSize="large"
+						bsStyle="primary"
 						disabled={!this.validateForm()}
 						isLoading={isLoading}
 						loadingText="Creating..."
