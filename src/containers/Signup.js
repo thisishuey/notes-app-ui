@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HelpBlock, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import './Signup.css';
 
@@ -30,13 +31,31 @@ export default class Signup extends Component {
 	handleSubmit = async (event) => {
 		event.preventDefault();
 		this.setState({ isLoading: true });
-		this.setState({ newUser: 'test' });
+		const { email: username, password } = this.state;
+		try {
+			const newUser = await Auth.signUp({ username, password });
+			this.setState({ newUser });
+		} catch (exception) {
+			alert(exception.message);
+		}
+
 		this.setState({ isLoading: false });
 	}
 
 	handleConfirmationSubmit = async (event) => {
 		event.preventDefault();
 		this.setState({ isLoading: true });
+		const { history, userHasAuthenticated } = this.props;
+		const { confirmationCode, email, password } = this.state;
+		try {
+			await Auth.confirmSignUp(email, confirmationCode);
+			await Auth.signIn(email, password);
+			userHasAuthenticated(true);
+			history.push('/');
+		} catch (exception) {
+			alert(exception.message);
+			this.setState({ isLoading: false });
+		}
 	}
 
 	renderForm () {
