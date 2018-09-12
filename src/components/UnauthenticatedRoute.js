@@ -26,4 +26,4 @@ export default ({ component: Component, props: childProps, ...rest }) => {
 			}
 		/>
 	);
-}
+};

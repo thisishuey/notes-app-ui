@@ -14,4 +14,4 @@ export default {
 		APP_CLIENT_ID: '1r5pfgl6ini5us2sjqlr6imuem',
 		IDENTITY_POOL_ID: 'us-east-1:e50b48b0-fbe6-42bb-9243-5baa69510ddb'
 	}
-}
+};
