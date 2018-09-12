@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HelpBlock, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { ControlLabel, FormControl, FormGroup, HelpBlock } from 'react-bootstrap';
 import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import './Signup.css';
@@ -25,7 +25,8 @@ export default class Signup extends Component {
 	}
 
 	handleChange = (event) => {
-		this.setState({ [event.target.id]: event.target.value });
+		const { id, value } = event.target;
+		this.setState({ [id]: value });
 	}
 
 	handleSubmit = async (event) => {

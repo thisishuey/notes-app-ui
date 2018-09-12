@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import './Login.css';
@@ -18,9 +18,8 @@ export default class Login extends Component {
 	}
 
 	handleChange = (event) => {
-		this.setState({
-			[event.target.id]: event.target.value
-		});
+		const { id, value } = event.target;
+		this.setState({ [id]: value });
 	}
 
 	handlSubmit = async (event) => {
