@@ -22,7 +22,7 @@ const UnauthenticatedRoute = ({ component: Component, props: childProps, ...rest
 			render={(props) =>
 				!childProps.isAuthenticated
 					? <Component {...props} {...childProps} />
-					: <Redirect to={redirect === '' || redirect === null ? '/' : redirect} />
+					: <Redirect to={redirect === '' || redirect === null ? '/notes' : redirect} />
 			}
 		/>
 	);

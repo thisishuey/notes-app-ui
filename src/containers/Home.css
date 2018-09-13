@@ -1,34 +1,21 @@
-.Home .lander {
+.Home {
 	padding: 80px 0;
 	text-align: center;
 }
 
-.Home .lander h1 {
+.Home h1 {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 600;
 }
 
-.Home .lander p {
+.Home p {
 	color: #999;
 }
 
-.Home .lander div {
+.Home div {
 	padding-top: 20px;
 }
 
-.Home .lander div a:first-child {
+.Home div a:first-child {
 	margin-right: 20px;
-}
-
-.Home .notes h4 {
-	font-family: "Open Sans", sans-serif;
-	font-weight: 600;
-	overflow: hidden;
-	line-height: 1.5;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-.Home .notes p {
-	color: #666;
 }
