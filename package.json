@@ -14,9 +14,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "deploy": "aws s3 sync build/ s3://carpe-telam-serverless-notes-app-ui --profile serverless --delete",
     "eject": "react-scripts eject",
-    "lint": "eslint --init"
+    "predeploy": "yarn build",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id EAGJHIIZ9FLUK --paths '/*' --profile serverless",
+    "test": "react-scripts test --env=jsdom"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
