@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { API, Storage } from 'aws-amplify';
 import { PropTypes } from 'prop-types';
+import { API, Storage } from 'aws-amplify';
 import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
+import DeleteButton from '../components/DeleteButton';
 import LoaderButton from '../components/LoaderButton';
 import { s3Upload } from '../libs/aws';
 import config from '../config';
@@ -12,7 +13,6 @@ class Note extends Component {
 	state = {
 		attachmentURL: null,
 		content: '',
-		isDeleting: null,
 		isLoading: null,
 		note: null
 	};
@@ -85,30 +85,8 @@ class Note extends Component {
 		return API.put('notes', `/notes/${match.params.id}`, { body });
 	}
 
-	handleDelete = async (event) => {
-		event.preventDefault();
-		const { history } = this.props;
-		const confirmed = window.confirm('Are you sure you want to delete this note?');
-		if (!confirmed) {
-			return;
-		}
-		this.setState({ isDeleting: true });
-		try {
-			await this.deleteNote();
-			history.push('/');
-		} catch (exception) {
-			alert(exception.message);
-			this.setState({ isDeleting: false });
-		}
-	}
-
-	deleteNote () {
-		const { match } = this.props;
-		return API.del('notes', `/notes/${match.params.id}`);
-	}
-
 	render () {
-		const { attachmentURL, content, isDeleting, isLoading, note } = this.state;
+		const { attachmentURL, content, isLoading, note } = this.state;
 		return (
 			<div className="Note">
 				{note && 
@@ -141,15 +119,7 @@ class Note extends Component {
 							text="Save"
 							type="submit"
 						/>
-						<LoaderButton
-							block
-							bsSize="large"
-							bsStyle="danger"
-							isLoading={isDeleting}
-							loadingText="Deleting..."
-							onClick={this.handleDelete}
-							text="Delete"
-						/>
+						<DeleteButton />
 					</form>
 				}
 			</div>
