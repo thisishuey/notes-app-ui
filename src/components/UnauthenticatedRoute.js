@@ -14,7 +14,7 @@ function queryString (name, url = window.location.href) {
 	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-export default ({ component: Component, props: childProps, ...rest }) => {
+const UnauthenticatedRoute = ({ component: Component, props: childProps, ...rest }) => {
 	const redirect = queryString('redirect');
 	return (
 		<Route
@@ -27,3 +27,5 @@ export default ({ component: Component, props: childProps, ...rest }) => {
 		/>
 	);
 };
+
+export default UnauthenticatedRoute;

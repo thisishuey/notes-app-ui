@@ -1,4 +1,4 @@
-export default {
+const config = {
 	MAX_ATTACHMENT_SIZE: 5000000,
 	s3: {
 		REGION: 'us-east-1',
@@ -15,3 +15,5 @@ export default {
 		IDENTITY_POOL_ID: 'us-east-1:e50b48b0-fbe6-42bb-9243-5baa69510ddb'
 	}
 };
+
+export default config;

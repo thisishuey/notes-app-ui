@@ -5,7 +5,7 @@ import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import './Login.css';
 
-export default class Login extends Component {
+class Login extends Component {
 	state = {
 		isLoading: false,
 		email: '',
@@ -76,3 +76,5 @@ export default class Login extends Component {
 Login.propTypes = {
 	userHasAuthenticated: PropTypes.func.isRequired
 };
+
+export default Login;

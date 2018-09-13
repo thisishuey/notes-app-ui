@@ -6,7 +6,7 @@ import { s3Upload } from '../libs/aws';
 import config from '../config';
 import './NewNote.css';
 
-export default class NewNote extends Component {
+class NewNote extends Component {
 	state = {
 		isLoading: null,
 		content: ''
@@ -88,3 +88,5 @@ export default class NewNote extends Component {
 		);
 	}
 }
+
+export default NewNote;

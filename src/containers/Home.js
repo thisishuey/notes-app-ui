@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { API } from 'aws-amplify';
 import './Home.css';
 
-export default class Home extends Component {
+class Home extends Component {
 	state = {
 		isLoading: true,
 		notes: []
@@ -109,3 +109,5 @@ Home.propTypes = {
 	history: PropTypes.object.isRequired,
 	isAuthenticated: PropTypes.bool.isRequired
 };
+
+export default Home;

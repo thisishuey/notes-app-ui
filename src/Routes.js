@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
+import { PropTypes } from 'prop-types';
 import Home from './containers/Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
@@ -10,12 +11,21 @@ import AppliedRoute from './components/AppliedRoute';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 
-export default ({ childProps }) =>
-	<Switch>
-		<AppliedRoute path="/" exact component={Home} props={childProps} />
-		<UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
-		<UnauthenticatedRoute path="/signup" exact component={Signup} props={childProps} />
-		<AuthenticatedRoute path="/notes/new" exact component={NewNote} props={childProps} />
-		<AuthenticatedRoute path="/notes/:id" exact component={Note} props={childProps} />
-		<Route component={NotFound} />
-	</Switch>;
+const Routes = ({ childProps }) => {
+	return (
+		<Switch>
+			<AppliedRoute path="/" exact component={Home} props={childProps} />
+			<UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
+			<UnauthenticatedRoute path="/signup" exact component={Signup} props={childProps} />
+			<AuthenticatedRoute path="/notes/new" exact component={NewNote} props={childProps} />
+			<AuthenticatedRoute path="/notes/:id" exact component={Note} props={childProps} />
+			<Route component={NotFound} />
+		</Switch>
+	);
+};
+
+Routes.propTypes = {
+	childProps: PropTypes.object.isRequired
+};
+
+export default Routes;

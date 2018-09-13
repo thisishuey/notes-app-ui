@@ -4,7 +4,7 @@ import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import './Signup.css';
 
-export default class Signup extends Component {
+class Signup extends Component {
 	state = {
 		isLoading: false,
 		email: '',
@@ -137,3 +137,5 @@ export default class Signup extends Component {
 		);
 	}
 }
+
+export default Signup;

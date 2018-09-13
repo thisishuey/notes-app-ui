@@ -7,7 +7,7 @@ import { s3Upload } from '../libs/aws';
 import config from '../config';
 import './Note.css';
 
-export default class Note extends Component {
+class Note extends Component {
 	file = null;
 	state = {
 		attachmentURL: null,
@@ -160,3 +160,5 @@ export default class Note extends Component {
 Note.propTypes = {
 	match: PropTypes.object.isRequired
 };
+
+export default Note;
