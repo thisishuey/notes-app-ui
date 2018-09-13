@@ -8,8 +8,8 @@ import Notes from './containers/Notes';
 import NewNote from './containers/NewNote';
 import Note from './containers/Note';
 import NotFound from './containers/NotFound';
-import AuthenticatedRoute from './components/routes/AuthenticatedRoute';
-import UnauthenticatedRoute from './components/routes/UnauthenticatedRoute';
+import AuthenticatedRoute from './components/route/AuthenticatedRoute';
+import UnauthenticatedRoute from './components/route/UnauthenticatedRoute';
 
 const Routes = ({ childProps }) => {
 	return (
