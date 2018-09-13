@@ -82,7 +82,8 @@ class Confirm extends Component {
 }
 
 Confirm.propTypes = {
-	history: PropTypes.object.isRequired
+	history: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired
 };
 
 export default Confirm;
