@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { API } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
@@ -88,5 +89,9 @@ class NewNote extends Component {
 		);
 	}
 }
+
+NewNote.propTypes = {
+	history: PropTypes.object.isRequired
+};
 
 export default NewNote;

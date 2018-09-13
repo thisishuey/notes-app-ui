@@ -158,6 +158,7 @@ class Note extends Component {
 }
 
 Note.propTypes = {
+	history: PropTypes.object.isRequired,
 	match: PropTypes.object.isRequired
 };
 

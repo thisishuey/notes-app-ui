@@ -79,7 +79,8 @@ class Notes extends Component {
 }
 
 Notes.propTypes = {
-	history: PropTypes.object.isRequired
+	history: PropTypes.object.isRequired,
+	isAuthenticated: PropTypes.bool.isRequired
 };
 
 export default Notes;

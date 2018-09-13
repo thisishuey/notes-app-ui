@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { ControlLabel, FormControl, FormGroup, HelpBlock } from 'react-bootstrap';
 import { Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
@@ -137,5 +138,10 @@ class Signup extends Component {
 		);
 	}
 }
+
+Signup.propTypes = {
+	history: PropTypes.object.isRequired,
+	userHasAuthenticated: PropTypes.func.isRequired
+};
 
 export default Signup;
